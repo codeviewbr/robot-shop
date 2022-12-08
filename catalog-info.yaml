@@ -1,0 +1,41 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: robot-shop
+  description: robot-shop Api
+
+  # annotations:
+    # github.com/project-slug: diegoluisi/robot-shop
+    # backstage.io/techdocs-ref: value
+  tags:
+    - web
+    - apache
+  links:
+    - url: https://flym.devxp.com/user
+      title: Examples Users
+      icon: user
+    - url: https://flym.devxp.com/group
+      title: Example Group
+      icon: group
+    - url: https://flym.devxp.com/cloud
+      title: Link with Cloud Icon
+      icon: cloud
+    - url: https://flym.devxp.com/dashboard
+      title: Dashboard
+      icon: dashboard
+    - url: https://flym.devxp.com/help
+      title: Support
+      icon: help
+    - url: https://flym.devxp.com/web
+      title: Website
+      icon: web
+    - url: https://flym.devxp.com/alert
+      title: Alerts
+      icon: alert
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:engineer
+  system: flym
+  dependsOn: ['component:flym-cache', 'component:flym-db', 'component:flym-queue']
+  apiConsumedBy: ['system:alice']
